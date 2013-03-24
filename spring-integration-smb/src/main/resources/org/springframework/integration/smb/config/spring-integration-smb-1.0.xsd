@@ -11,7 +11,7 @@
 	<xsd:import namespace="http://www.springframework.org/schema/beans"/>
 	<xsd:import namespace="http://www.springframework.org/schema/tool"/>
 	<xsd:import namespace="http://www.springframework.org/schema/integration"
-		schemaLocation="http://www.springframework.org/schema/integration/spring-integration-2.0.xsd"/>
+		schemaLocation="http://www.springframework.org/schema/integration/spring-integration-2.2.xsd"/>
 
 		<xsd:annotation>
 			<xsd:documentation><![CDATA[
@@ -33,6 +33,9 @@
 		<xsd:complexType>
 			<xsd:complexContent>
 				<xsd:extension base="base-smb-adapter-type">
+					<xsd:all>
+						<xsd:element name="request-handler-advice-chain" type="integration:adviceChainType" minOccurs="0" maxOccurs="1" />
+					</xsd:all>
 					<xsd:attribute name="remote-directory" type="xsd:string">
 						<xsd:annotation>
 							<xsd:documentation>
